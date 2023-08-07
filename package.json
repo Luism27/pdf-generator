@@ -1,0 +1,50 @@
+{
+  "name": "pdf-generator",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "npm": "9.2.0",
+    "node": "18.13.0"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -w && copyfiles -f src/**/*.png dist/pdf/assets/images",
+    "start": "concurrently \"npm run build -- --watch\" \"nodemon --exec babel-node dist/app.js\"",
+    "dev": "tsx watch src/index.ts",
+    "lint": "eslint . --ext .ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.1",
+    "@types/node": "^20.4.8",
+    "@types/react": "^18.2.18",
+    "@types/webpack": "^5.28.1",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "@webpack-cli/generators": "^3.0.7",
+    "babel-plugin-file-loader": "^2.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "declaration-bundler-webpack-plugin": "^1.0.3",
+    "eslint": "^8.46.0",
+    "file-loader": "^6.2.0",
+    "nodemon": "^3.0.1",
+    "ts-loader": "^9.4.4",
+    "ts-node": "^10.9.1",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6",
+    "webpack": "^5.88.2",
+    "wepack-cli": "^0.0.1-security"
+  },
+  "dependencies": {
+    "@react-pdf/renderer": "^3.1.12",
+    "axios": "^1.4.0",
+    "babel-cli": "^6.26.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.17.1",
+    "react": "^18.2.0"
+  }
+}
